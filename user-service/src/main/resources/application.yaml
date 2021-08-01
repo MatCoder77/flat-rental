@@ -1,0 +1,15 @@
+server:
+  servlet:
+    context-path: /@project.artifactId@
+api-docs:
+  title: @project.name@ REST API
+  version: @project.version@
+  description: @project.description@
+  termsOfServiceUrl: https://flatrental.com/terms
+  license:
+    name: Flat Rental License
+    url: https://flatrental.com/license
+  contact:
+    name: Flat Rental Support
+    email: support@flatretnal.com
+    url: https://flatrental.com/support
