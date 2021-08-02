@@ -45,4 +45,5 @@
       "type": "java.lang.String",
       "description": "API title shown in API documentation."
     }
-  ] }
+  ]
+}
