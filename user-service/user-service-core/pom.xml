@@ -46,11 +46,6 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>org.immutables</groupId>
-            <artifactId>value</artifactId>
-            <scope>provided</scope>
-        </dependency>
         <!--========================================== TEST DEPENDENCIES ============================================-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
