@@ -1,0 +1,48 @@
+{
+  "properties": [
+    {
+      "name": "api-docs.contact.url",
+      "type": "java.lang.String",
+      "description": "Contact URL shown in API documentation."
+    },
+    {
+      "name": "api-docs.contact.email",
+      "type": "java.lang.String",
+      "description": "Contact e-mail shown in API documentation."
+    },
+    {
+      "name": "api-docs.contact.name",
+      "type": "java.lang.String",
+      "description": "Contact name shown in API documentation."
+    },
+    {
+      "name": "api-docs.license.url",
+      "type": "java.lang.String",
+      "description": "License URL shown in API documentation."
+    },
+    {
+      "name": "api-docs.license.name",
+      "type": "java.lang.String",
+      "description": "License name shown in API documentation."
+    },
+    {
+      "name": "api-docs.termsOfServiceUrl",
+      "type": "java.lang.String",
+      "description": "Terms of use shown in API documentation."
+    },
+    {
+      "name": "api-docs.description",
+      "type": "java.lang.String",
+      "description": "API description shown in API documentation ."
+    },
+    {
+      "name": "api-docs.version",
+      "type": "java.lang.String",
+      "description": "API version shown in API documentation."
+    },
+    {
+      "name": "api-docs.title",
+      "type": "java.lang.String",
+      "description": "API title shown in API documentation."
+    }
+  ] }
