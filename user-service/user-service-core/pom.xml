@@ -2,26 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>user-service</artifactId>
         <groupId>com.flatrental</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
     <artifactId>user-service-core</artifactId>
     <name>User Service Core</name>
     <description>Service for user management, authentication and authorization</description>
-
-    <properties>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
-    </properties>
 
     <dependencies>
         <!--====================================== INTERNAL DEPENDENCIES ============================================-->
         <dependency>
             <groupId>com.flatrental</groupId>
-            <artifactId>services-infrastructure</artifactId>
+            <artifactId>services-configuration</artifactId>
         </dependency>
         <!--====================================== EXTERNAL DEPENDENCIES ============================================-->
         <dependency>

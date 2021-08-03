@@ -2,10 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<packaging>pom</packaging>
-	<modules>
-		<module>services-configuration</module>
-	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -15,28 +11,17 @@
 	<groupId>com.flatrental</groupId>
 	<artifactId>services-infrastructure</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>Services Infrastructure</name>
 	<description>Provides basic support for cross-cutting concerns</description>
-	<properties>
-		<java.version>16</java.version>
-		<springdoc.version>1.5.10</springdoc.version>
-	</properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<!--====================================== EXTERNAL DEPENDENCIES ========================================-->
-			<dependency>
-				<groupId>org.springdoc</groupId>
-				<artifactId>springdoc-openapi-ui</artifactId>
-				<version>${springdoc.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springdoc</groupId>
-				<artifactId>springdoc-openapi-data-rest</artifactId>
-				<version>${springdoc.version}</version>
-			</dependency>
-			<!--======================================= TEST DEPENDENCIES ===========================================-->
-		</dependencies>
-	</dependencyManagement>
+	<modules>
+		<module>services-configuration</module>
+		<module>infrastructure-bom</module>
+	</modules>
+
+	<properties>
+		<java.version>15</java.version>
+	</properties>
 
 </project>
