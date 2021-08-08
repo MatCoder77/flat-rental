@@ -1,6 +1,7 @@
 server:
   servlet:
     context-path: /@project.artifactId@
+  port: 0
 api-docs:
   title: @project.name@ REST API
   version: @project.version@
@@ -13,3 +14,9 @@ api-docs:
     name: Flat Rental Support
     email: support@flatretnal.com
     url: https://flatrental.com/support
+spring:
+  application:
+    name: @project.artifactId@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
