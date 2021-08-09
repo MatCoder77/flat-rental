@@ -1,6 +1,5 @@
 package com.flatrental.infrastructure.configuration;
 
-import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
@@ -17,7 +16,6 @@ import java.text.MessageFormat;
 @Configuration
 @ConditionalOnWebApplication
 @RequiredArgsConstructor
-@Schema
 public class OpenApiConfiguration {
 
     private static final String GROUP_PATHS_TEMPLATE = "/{0}/**";
