@@ -1,0 +1,12 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: @project.artifactId@
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/MatCoder77/flat-rental-config-repository.git
+          default-label: main
+          clone-on-start: true
