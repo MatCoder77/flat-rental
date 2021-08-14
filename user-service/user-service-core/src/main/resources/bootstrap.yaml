@@ -37,6 +37,10 @@ api-docs:
 eureka:
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
+    hostname: localhost
+    statusPageUrlPath: ${server.servlet.context-path}/actuator/info
+    healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
+
 management:
   endpoints:
     web:
