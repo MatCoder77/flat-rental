@@ -1,4 +1,6 @@
 server:
+  servlet:
+    context-path: /@project.artifactId@
   port: 8888
 spring:
   application:
@@ -10,3 +12,12 @@ spring:
           uri: https://github.com/MatCoder77/flat-rental-config-repository.git
           default-label: main
           clone-on-start: true
+    bus:
+      enabled: true
+    kafka:
+      bootstrap-servers: ${KAFKA_ADDR:http://localhost:9092}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -7,7 +7,19 @@ spring:
     name: user-service
   cloud:
     config:
-      uri: ${SPRING_CONFIG_URI:http://localhost:8888}
+      uri: ${CONFIG_URI:http://localhost:8888/configuration-service}
+      fail-fast: true
+      retry:
+        max-attempts: 20
+        max-interval: 15000
+        initial-interval: 10000
+      bus:
+        refresh:
+          enabled: true
+        env:
+          enabled: true
+    kafka:
+      bootstrap-servers: ${KAFKA_ADDR:http://localhost:9092}
 api-docs:
   title: @project.name@ REST API
   version: @project.version@
