@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>user-service-core</artifactId>
-    <name>User Service Core</name>
+    <name>User Service</name>
     <description>Service for user management, authentication and authorization</description>
 
     <dependencies>

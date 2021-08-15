@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /@project.artifactId@
+    context-path: /user-service
   port: 0
 spring:
   application:
@@ -40,7 +40,6 @@ eureka:
     hostname: localhost
     statusPageUrlPath: ${server.servlet.context-path}/actuator/info
     healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
-
 management:
   endpoints:
     web:
