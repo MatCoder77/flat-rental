@@ -1,7 +1,3 @@
-server:
-  servlet:
-    context-path: /user-service
-  port: 0
 spring:
   application:
     name: user-service
@@ -15,33 +11,3 @@ spring:
         max-attempts: 20
         max-interval: 15000
         initial-interval: 10000
-      bus:
-        refresh:
-          enabled: true
-        env:
-          enabled: true
-    kafka:
-      bootstrap-servers: ${KAFKA_ADDR:http://localhost:9092}
-api-docs:
-  title: @project.name@ REST API
-  version: @project.version@
-  description: @project.description@
-  termsOfServiceUrl: https://flatrental.com/terms
-  license:
-    name: Flat Rental License
-    url: https://flatrental.com/license
-  contact:
-    name: Flat Rental Support
-    email: support@flatretnal.com
-    url: https://flatrental.com/support
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${random.uuid}
-    hostname: localhost
-    statusPageUrlPath: ${server.servlet.context-path}/actuator/info
-    healthCheckUrlPath: ${server.servlet.context-path}/actuator/health
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"

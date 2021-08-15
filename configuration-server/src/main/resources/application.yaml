@@ -1,10 +1,10 @@
 server:
   servlet:
-    context-path: /@project.artifactId@
+    context-path: /configuration-service
   port: 8888
 spring:
   application:
-    name: @project.artifactId@
+    name: configuration-service
   cloud:
     config:
       server:
@@ -14,8 +14,8 @@ spring:
           clone-on-start: true
     bus:
       enabled: true
-    kafka:
-      bootstrap-servers: ${KAFKA_ADDR:http://localhost:9092}
+  kafka:
+    bootstrap-servers: ${KAFKA_ADDR:http://localhost:9092}
 management:
   endpoints:
     web:
