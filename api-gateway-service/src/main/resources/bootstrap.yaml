@@ -11,10 +11,3 @@ spring:
         max-attempts: 20
         max-interval: 15000
         initial-interval: 10000
-      bus:
-        refresh:
-          enabled: true
-        env:
-          enabled: true
-      kafka:
-        bootstrap-servers: ${KAFKA_ADDR:http://localhost:9092}
