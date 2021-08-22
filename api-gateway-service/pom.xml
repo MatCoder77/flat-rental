@@ -15,7 +15,8 @@
 	<description>Gateway Service for Flat Rental System</description>
 	<properties>
 		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.3</spring-cloud.version>
+		<infrastructure.version>0.0.1-SNAPSHOT</infrastructure.version>
+		<docker-maven-plugin.version>0.37.0</docker-maven-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -47,13 +48,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.fabric8</groupId>
+			<artifactId>docker-maven-plugin</artifactId>
+			<version>${docker-maven-plugin.version}</version>
+		</dependency>
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
+				<groupId>com.flatrental</groupId>
+				<artifactId>infrastructure-bom</artifactId>
+				<version>${infrastructure.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -65,6 +72,37 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<verbose>true</verbose>
+					<images>
+						<image>
+							<name>${project.artifactId}</name>
+							<build>
+								<contextDir>${project.basedir}</contextDir>
+								<assembly>
+									<descriptorRef>artifact</descriptorRef>
+								</assembly>
+								<tags>
+									<tag>latest</tag>
+									<tag>${project.version}</tag>
+								</tags>
+							</build>
+						</image>
+					</images>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
