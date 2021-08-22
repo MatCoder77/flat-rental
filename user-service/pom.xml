@@ -28,7 +28,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!--====================================== INTERNAL DEPENDENCIES ============================================-->
 			<dependency>
 				<groupId>com.flatrental</groupId>
 				<artifactId>infrastructure-bom</artifactId>

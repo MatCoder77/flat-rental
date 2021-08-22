@@ -21,6 +21,7 @@
 	</properties>
 
 	<dependencies>
+		<!--====================================== EXTERNAL DEPENDENCIES ============================================-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
@@ -30,11 +31,13 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!--====================================== TEST DEPENDENCIES ================================================-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--====================================== PLUGIN DEPENDENCIES ==============================================-->
 		<dependency>
 			<groupId>io.fabric8</groupId>
 			<artifactId>docker-maven-plugin</artifactId>

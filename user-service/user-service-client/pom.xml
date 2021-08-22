@@ -13,6 +13,7 @@
     <description>Client module for User Service Core API</description>
 
     <dependencies>
+        <!--====================================== EXTERNAL DEPENDENCIES ============================================-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

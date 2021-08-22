@@ -19,6 +19,7 @@
 		<docker-maven-plugin.version>0.37.0</docker-maven-plugin.version>
 	</properties>
 	<dependencies>
+		<!--====================================== EXTERNAL DEPENDENCIES ============================================-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -35,11 +36,13 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-kafka</artifactId>
 		</dependency>
+		<!--====================================== TEST DEPENDENCIES ================================================-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--====================================== PLUGIN DEPENDENCIES ==============================================-->
 		<dependency>
 			<groupId>io.fabric8</groupId>
 			<artifactId>docker-maven-plugin</artifactId>

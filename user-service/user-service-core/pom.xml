@@ -72,6 +72,7 @@
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--========================================== PLUGIN DEPENDENCIES ==========================================-->
         <dependency>
             <groupId>io.fabric8</groupId>
             <artifactId>docker-maven-plugin</artifactId>
