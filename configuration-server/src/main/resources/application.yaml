@@ -27,3 +27,6 @@ eureka:
     hostname: localhost
     metadata-map:
       configPath: ${server.servlet.context-path}
+  client:
+    serviceUrl:
+      defaultZone=${EUREKA_SERVER:http://localhost:8761/eureka}:
