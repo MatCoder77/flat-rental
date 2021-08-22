@@ -13,10 +13,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Service Discovery</name>
 	<description>Service discovery of Flat Rental system</description>
+
 	<properties>
 		<java.version>15</java.version>
 		<infrastructure.version>0.0.1-SNAPSHOT</infrastructure.version>
+		<docker-maven-plugin.version>0.37.0</docker-maven-plugin.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -32,7 +35,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.fabric8</groupId>
+			<artifactId>docker-maven-plugin</artifactId>
+			<version>${docker-maven-plugin.version}</version>
+		</dependency>
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -58,6 +67,38 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.37.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<verbose>true</verbose>
+					<images>
+						<image>
+							<name>${project.artifactId}</name>
+							<build>
+								<contextDir>${project.basedir}</contextDir>
+								<assembly>
+									<descriptorRef>artifact</descriptorRef>
+								</assembly>
+								<tags>
+									<tag>latest</tag>
+									<tag>${project.version}</tag>
+								</tags>
+							</build>
+						</image>
+					</images>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
         </plugins>
 	</build>
