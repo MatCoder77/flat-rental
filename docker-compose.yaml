@@ -1,0 +1,79 @@
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: zookeeper
+      ZOOKEEPER_CLIENT_PORT: 2181
+    expose:
+      - 2181
+    ports:
+      - 2181:2181
+
+  kafka:
+    image: wurstmeister/kafka
+    hostname: kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_ADVERTISED_PORT: 9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    expose:
+      - 9092
+    ports:
+      - 9092:9092
+
+  service-discovery:
+    image: service-discovery
+    environment:
+      SERVER_PORT: 8761
+    expose:
+      - 8761
+
+  configuration-service:
+    image: configuration-service
+    depends_on:
+      - service-discovery
+      - kafka
+    restart: on-failure:10
+    environment:
+      SERVER_PORT: 8888
+      EUREKA_SERVER: http://service-discovery:8761/eureka
+      HOST_NAME: configuration-service
+      KAFKA_ADDR: http://kafka:9092
+    env_file: .env
+    expose:
+      - 8888
+
+  gateway-service:
+    image: gateway-service
+    depends_on:
+      - service-discovery
+      - configuration-service
+      - kafka
+    restart: on-failure:10
+    environment:
+      SERVER_PORT: 5000
+      EUREKA_SERVER: http://service-discovery:8761/eureka
+      HOST_NAME: gateway-service
+      KAFKA_ADDR: http://kafka:9092
+    ports:
+      - 5000:5000
+
+  user-service-core:
+    image: user-service-core
+    depends_on:
+      - service-discovery
+      - configuration-service
+      - kafka
+    restart: on-failure:10
+    environment:
+      SERVER_PORT: 8080
+      EUREKA_SERVER: http://service-discovery:8761/eureka
+      HOST_NAME: user-service-core
+      KAFKA_ADDR: http://kafka:9092
+    expose:
+      - 8080
