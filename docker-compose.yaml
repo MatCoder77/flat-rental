@@ -26,6 +26,28 @@ services:
     ports:
       - 9092:9092
 
+  keycloak:
+    image: quay.io/keycloak/keycloak:16.1.0
+    hostname: keycloak
+    env_file: .env
+    volumes:
+      - ./keycloak-data:/var/lib/keycloak/data
+    ports:
+      - 8180:8080
+
+  postgres:
+    image: postgres:10.5
+    restart: always
+    env_file: .env
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
   service-discovery:
     image: service-discovery
     environment:
@@ -69,6 +91,7 @@ services:
       - service-discovery
       - configuration-service
       - kafka
+      - keycloak
     restart: on-failure:10
     environment:
       SERVER_PORT: 8080
