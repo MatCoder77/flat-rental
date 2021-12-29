@@ -50,12 +50,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!--====================================== PLUGIN DEPENDENCIES ==============================================-->
-		<dependency>
-			<groupId>io.fabric8</groupId>
-			<artifactId>docker-maven-plugin</artifactId>
-			<version>${docker-maven-plugin.version}</version>
-		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -79,6 +73,7 @@
 			<plugin>
 				<groupId>io.fabric8</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
+				<version>${docker-maven-plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
 					<verbose>true</verbose>
