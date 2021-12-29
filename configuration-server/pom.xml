@@ -14,9 +14,9 @@
 	<name>Configuration Service</name>
 	<description>Configuration Service</description>
 	<properties>
-		<java.version>15</java.version>
+		<java.version>17</java.version>
 		<infrastructure.version>0.0.1-SNAPSHOT</infrastructure.version>
-		<docker-maven-plugin.version>0.37.0</docker-maven-plugin.version>
+		<docker-maven-plugin.version>0.38.0</docker-maven-plugin.version>
 	</properties>
 	<dependencies>
 		<!--====================================== EXTERNAL DEPENDENCIES ============================================-->

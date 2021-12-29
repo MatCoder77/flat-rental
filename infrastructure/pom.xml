@@ -18,10 +18,11 @@
 	<modules>
 		<module>services-configuration</module>
 		<module>infrastructure-bom</module>
+		<module>common-api</module>
 	</modules>
 
 	<properties>
-		<java.version>15</java.version>
+		<java.version>17</java.version>
 	</properties>
 
 </project>

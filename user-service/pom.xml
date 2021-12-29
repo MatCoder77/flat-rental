@@ -21,7 +21,7 @@
 	</modules>
 
 	<properties>
-		<java.version>15</java.version>
+		<java.version>17</java.version>
 		<services-infrastructure.version>0.0.1-SNAPSHOT</services-infrastructure.version>
 		<docker-maven-plugin.version>0.37.0</docker-maven-plugin.version>
 	</properties>
